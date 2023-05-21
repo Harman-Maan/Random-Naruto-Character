@@ -17,6 +17,11 @@ function displayContent(data) {
     return `<ul>${result}</ul>`;
   }
 
+  function getImageSrc(image) {
+    let result = image.match(/.+png/);
+    return result[0];
+  }
+
   container.innerHTML = `
           <div class="description personal">
             <h1 class="name">${data.name}</h1>
@@ -32,7 +37,7 @@ function displayContent(data) {
             ${data.personal.jinchūriki ? "Jinchūriki: " + data.personal.jinchūriki + "<br>" : ""}
             ${data.personal.bloodType ? "Blood Type: " + data.personal.bloodType + "<br>" : ""}<br>
           </div>
-          ${data.images[0] ? `<img src="${data.images[0]}" alt="${data.name}" class="img"/>` : "<div class='no-img'>Image Not Avaliable</div>"}
+          ${data.images[0] ? `<img src="${getImageSrc(data.images[0])}" alt="${data.name}" class="img"/>` : "<div class='no-img'>Image Not Avaliable</div>"}
           
           <div class="description other">
             ${data.natureType ? "<span>Nature Type:</span> " + display(data.natureType) + "<br>" : ""}
