@@ -1,13 +1,13 @@
 const container = document.getElementById("container");
 
 function displayContent(data) {
-  // This is to diplay list of Object Datatypes
+  // This is to diplay list of Array datatypes
   function display(item) {
     let result = item.map((jutsu) => `<li>${jutsu}</li>`).join(" ");
     return `<ul class="jutsu">${result}</ul>`;
   }
 
-  // This is to diplay list of Object Datatypes
+  // This is to diplay list of Object datatypes
   function displayObj(obj) {
     let result = "";
     for (let i in obj) {
@@ -58,4 +58,4 @@ function getCharacter() {
     .catch((err) => console.log("not found", err));
 }
 
-getCharacter();
+getCharacter(); // To display data when site is loaded
